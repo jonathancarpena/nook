@@ -34,6 +34,8 @@ The guest card uses an HttpOnly cookie. Guests should revisit from the same brow
 
 ## Deploy with Supabase and Vercel
 
+For this event’s Supabase project and exact dashboard links, follow [DEPLOYMENT.md](DEPLOYMENT.md).
+
 1. Create a Supabase project. In its SQL Editor, run **`supabase/migrations/202610260001_tournament.sql`** once. Alternatively link the Supabase CLI to your project and run `supabase db push`. This creates private state, normalized projections, transactions, audit history, RLS, a public revision-only Realtime table, and display presence.
 2. In Supabase Auth → Users, create the host email/password user and confirm its email. Disable public sign-ups in Auth settings. Guests do not use Supabase Auth. Use a strong, unique host password. Provision additional hosts only if you want them to share control.
 3. Import this repository into Vercel as a Next.js project, select Node.js 24, and configure the variables below in the Vercel project. Keep server-only keys out of `NEXT_PUBLIC_` variables, source control, and browser code.
